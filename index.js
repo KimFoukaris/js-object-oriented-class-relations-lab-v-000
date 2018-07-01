@@ -15,7 +15,7 @@ class Driver {
   passengers() {
     return this.trips().map(function (trip) {
       return store.passengers.find(function (el) {
-        return el.id === trip.passengerId; 
+        return el.id === trip.passengerId;
       })
     })
   }
@@ -34,11 +34,11 @@ class Passenger {
     })
   }
   drivers() {
-          return this.trips.map(element => {
-        return store.drivers.find(function(driver){
-          return driver.id === element.driverId;
-      });
-    });
+    return this.trips().map(function (trip) {
+      return store.drivers.find(function (el) {
+        return el.id === trip.driverId;
+      })
+    })
   }
 }
 
